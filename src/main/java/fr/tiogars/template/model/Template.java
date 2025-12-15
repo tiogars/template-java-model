@@ -26,6 +26,10 @@ public class Template {
    */
   private String description;
 
+  /**
+   * Constructs a new Template with default values.
+   * All fields are initialized to their default values (0 for int, null for String).
+   */
   public Template() {
     // Default constructor
   }
