@@ -1,1 +1,113 @@
-pom
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>fr.tiogars</groupId>
+  <artifactId>template</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <name>template</name>
+  <description>Template Management Library</description>
+  <url>https://github.com/tiogars/template-java-model</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <jacoco.plugin.version>0.8.13</jacoco.plugin.version>
+    <jacoco.reportPath>${main.basedir}/target/jacoco.exec</jacoco.reportPath>
+    <jacoco.itReportPath>${main.basedir}/target/jacoco-it.exec</jacoco.itReportPath>
+  </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/tiogars/template-java-model</url>
+    </repository>
+  </distributionManagement>
+
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>5.13.4</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.doxia/doxia-core -->
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-core</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.doxia/doxia-sink-api -->
+    <dependency>
+      <groupId>org.apache.maven.doxia</groupId>
+      <artifactId>doxia-sink-api</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <!-- To use the plugin goals in your POM or parent POM -->
+    <plugins>
+      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.21.0</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <plugins>
+      <!-- Maven JXR plugin for source cross-referencing -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <testSourceXref>true</testSourceXref>
+        </configuration>
+      </plugin>
+      <!--
+      https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-project-info-reports-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>3.9.0</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.12.0</version>
+        <configuration>
+          <show>public</show>
+          <!-- Removed unsupported -1.1 option -->
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.plugin.version}</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>3.5.4</version>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
