@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"fr.tiogars.template.model","c":"TemplateTest","l":"TemplateTest()","u":"%3Cinit%3E()"},{"p":"fr.tiogars.template.model","c":"TemplateTest","l":"testGettersAndSetters()"},{"p":"fr.tiogars.template.model","c":"TemplateTest","l":"testToString()"},{"p":"fr.tiogars.template.model","c":"TemplateTest","l":"testToStringWithNullValues()"}];updateSearchResults();
