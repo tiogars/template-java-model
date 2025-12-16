@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.*;
  * Unit tests for the {@link Template} class.
  * This class tests all public methods and constructors of the Template model.
  */
-class TemplateTest {
+public class TemplateTest {
 
   /**
    * Tests the getter and setter methods for all Template fields.
    * Verifies that values set through setters are correctly retrieved by getters.
    */
   @Test
-  void testGettersAndSetters() {
+  public void testGettersAndSetters() {
     Template template = new Template();
 
     // Test id
@@ -39,7 +39,7 @@ class TemplateTest {
    * Verifies that all field values are present in the string representation.
    */
   @Test
-  void testToString() {
+  public void testToString() {
     Template template = new Template();
     template.setId(42);
     template.setCode("CODE123");
@@ -59,7 +59,7 @@ class TemplateTest {
    * Verifies that the string representation correctly handles null values.
    */
   @Test
-  void testToStringWithNullValues() {
+  public void testToStringWithNullValues() {
     Template template = new Template();
 
     String result = template.toString();
