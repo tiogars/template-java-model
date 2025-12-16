@@ -3,8 +3,16 @@ package fr.tiogars.template.model;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for the {@link Template} class.
+ * This class tests all public methods and constructors of the Template model.
+ */
 class TemplateTest {
 
+  /**
+   * Tests the getter and setter methods for all Template fields.
+   * Verifies that values set through setters are correctly retrieved by getters.
+   */
   @Test
   void testGettersAndSetters() {
     Template template = new Template();
@@ -26,6 +34,10 @@ class TemplateTest {
     assertEquals("This is a test template", template.getDescription());
   }
 
+  /**
+   * Tests the toString method with populated field values.
+   * Verifies that all field values are present in the string representation.
+   */
   @Test
   void testToString() {
     Template template = new Template();
@@ -42,6 +54,10 @@ class TemplateTest {
     assertTrue(result.contains("description='A description for testing'"));
   }
 
+  /**
+   * Tests the toString method with default (null) field values.
+   * Verifies that the string representation correctly handles null values.
+   */
   @Test
   void testToStringWithNullValues() {
     Template template = new Template();
