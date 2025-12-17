@@ -9,13 +9,13 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+  packages: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-      packages: read
 
     steps:
       - uses: tiogars/maven-site-action@v1.0.0
